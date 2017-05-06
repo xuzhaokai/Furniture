@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.onlinefurnitureshop.management.model.Worker"  table="Worker">
+		<id name="objId" type="java.lang.Integer">
+			    <column name="objId" />
+			    <generator class="native" />
+	     </id>
+	 <property name="workerId"  column="workerId"></property>
+     <property name="userName" column="name"></property>
+     <property name="password" column="password"></property>
+       <property name="realName" column="realname"></property>
+     <property name="address" column="address"></property>
+     <property name="email" column="email"></property>
+     <property name="mobilePhone" column="mobile"></property>
+     <property name="state" column="state"></property>
+     
+     <!-- 关联关系映射 -->
+     <many-to-one name="department"  class="com.onlinefurnitureshop.management.model.Department"  
+      column="departmentId" />
+	</class>
+
+
+</hibernate-mapping>

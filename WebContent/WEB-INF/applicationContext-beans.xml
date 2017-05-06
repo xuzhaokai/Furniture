@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+<!--配置bean -->
+
+  
+	
+<!-- manage -->
+	<bean id="manageDaoImpl" class="com.onlinefurnitureshop.management.dao.impl.ManageDaoImpl">
+		<property name="sessionFactory" >
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+
+	<bean id="manageServiceImpl" class="com.onlinefurnitureshop.management.service.impl.ManageSerivceImpl"  scope="prototype">
+		<property name="manageDao" >
+       		<ref bean="manageDaoImpl"/>
+       	</property>
+	</bean>
+	
+	<bean id="worker" class="com.onlinefurnitureshop.management.model.Worker">
+	</bean>
+</beans>
